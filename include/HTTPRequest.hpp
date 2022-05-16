@@ -1101,7 +1101,7 @@ namespace http
                         i = headerFieldResult.first;
 
                         auto fieldName = std::move(headerFieldResult.second.first);
-                        const auto toLower = [](const char c) noexcept {
+                        const auto toLower = [](const char c) noexcept -> char {
                             return (c >= 'A' && c <= 'Z') ? c - ('A' - 'a') : c;
                         };
                         std::transform(fieldName.begin(), fieldName.end(), fieldName.begin(), toLower);
